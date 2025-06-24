@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h1>Projects</h1>
+    <h2>You are on {{message}} page</h2>
+
+    {% if number > 10 %}
+        <p>Number is greater than 10</p>
+    {% else %}
+        <p>Number is less than or equal to 10</p>
+    {% endif %}
+
+{% endblock content %}

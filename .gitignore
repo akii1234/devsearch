@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+.env/
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Pytest
+.cache/
+
+# Migrations
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+
+# MyPy
+.mypy_cache/
+
+# Other
+*.swp
+*.swo
+.idea/
