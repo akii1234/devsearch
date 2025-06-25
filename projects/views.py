@@ -1,8 +1,6 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.http import HttpResponse
-
+from .models import Project
 
 data = [
     {"id": 1, "title": "Introduction to Python", "description": "A beginner's guide to Python programming."},
@@ -20,16 +18,13 @@ data = [
 
 
 def projects(request):
-    page = 'projects'
-    number = 12
-    context = {'page':page , 'number':number , 'projects': data}
+    data = Project.objects.all()
+    context = {'projects': data}
     return render(request,'projects/projects.html',context)
 
 
 def project(request,pk):
-    project_obj = None
-    for i in data:
-        if i['id'] == pk:
-            project_obj = i
-    context = {'project':project_obj}              
+    project_obj = Project.objects.get(id=pk)
+    tags = project_obj.tags.all()
+    context = {'project':project_obj,'tags':tags}              
     return render(request,'projects/single-projects.html',context)
